@@ -1,0 +1,11 @@
+{
+  "name": "@mo/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "description": "设计令牌：语义色 / 圆角 / 阴影 / 动效，亮暗双主题",
+  "main": "./src/tokens.css",
+  "exports": {
+    ".": "./src/tokens.css",
+    "./tokens.css": "./src/tokens.css"
+  }
+}

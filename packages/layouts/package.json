@@ -1,0 +1,17 @@
+{
+  "name": "@mo/layouts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "布局层：应用外壳与页面区块模板",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@mo/components": "*"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  }
+}

@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+@import '@mo/tokens/tokens.css';
+
+/* 类名策略的 dark 变体（配合 <html class="dark"> 切换） */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 工作区包源码纳入 Tailwind 扫描（否则组件类名不会被生成） */
+@source "../../packages/components/src";
+@source "../../packages/layouts/src";
+
+/* 令牌 → Tailwind 工具类映射（令牌值定义在 @mo/tokens） */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: 'Microsoft YaHei', 'PingFang SC', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  --shadow-card: var(--elev-1);
+  --shadow-pop: var(--elev-2);
+
+  --ease-soft: var(--ease-emphasis);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+      'Microsoft YaHei',
+      'PingFang SC',
+      system-ui,
+      -apple-system,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--motion-base) var(--ease-emphasis);
+  }
+}
+
+/* Toast 进出场动效（时长/缓动引用令牌） */
+.toast-enter-active,
+.toast-leave-active {
+  transition: all var(--motion-base) var(--ease-emphasis);
+}
+.toast-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(16px);
+}
+.toast-move {
+  transition: transform var(--motion-base) var(--ease-emphasis);
+}

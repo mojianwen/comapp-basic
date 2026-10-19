@@ -1,0 +1,72 @@
+/* ============================================================
+   @mo/tokens —— 设计令牌（唯一定义源，跨项目共享）
+   ① 语义色 / 阴影 elevation：亮色 :root · 暗色 .dark
+   ② 动效时长与缓动（主题无关）
+   Tailwind 工具类映射由使用方（应用/组件包）的 @theme inline 完成
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* 语义色（浅色） */
+  --background: #f3f6fb;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef6;
+  --secondary-foreground: #1e293b;
+  --muted: #eef2f8;
+  --muted-foreground: #64748b;
+  --accent: #e8eef6;
+  --accent-foreground: #1e293b;
+  --destructive: #dc2626;
+  --success: #059669;
+  --warning: #d97706;
+  --border: #dde5ef;
+  --input: #c9d4e3;
+  --ring: #0891b2;
+
+  /* 圆角 */
+  --radius: 0.5rem;
+
+  /* 阴影 elevation */
+  --elev-1: 0 1px 2px rgb(15 23 42 / 0.06), 0 2px 4px rgb(15 23 42 / 0.06);
+  --elev-2: 0 8px 24px rgb(15 23 42 / 0.14);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* 语义色（暗色 · 深空 navy + #00D4FF 工业风） */
+  --background: #0b1220;
+  --foreground: #e6edf7;
+  --card: #121b2e;
+  --card-foreground: #e6edf7;
+  --primary: #00d4ff;
+  --primary-foreground: #05131d;
+  --secondary: #16223a;
+  --secondary-foreground: #e6edf7;
+  --muted: #16223a;
+  --muted-foreground: #8fa3bf;
+  --accent: #1a2740;
+  --accent-foreground: #e6edf7;
+  --destructive: #f87171;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --border: #1e2a44;
+  --input: #24314e;
+  --ring: #00d4ff;
+
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --elev-2: 0 8px 24px rgb(0 0 0 / 0.55);
+}
+
+/* 动效令牌（亮暗共用） */
+:root {
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-slow: 400ms;
+  --ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+}

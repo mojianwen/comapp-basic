@@ -1,0 +1,24 @@
+{
+  "name": "@mo/components",
+  "version": "0.1.0",
+  "private": true,
+  "description": "组件库：Reka UI 无头逻辑 + 设计令牌样式（shadcn-vue 范式）",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./lib/utils": "./src/lib/utils.ts"
+  },
+  "scripts": {
+    "clean": "echo nothing to clean (source-only package)"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.468.0",
+    "reka-ui": "^2.2.0",
+    "tailwind-merge": "^3.0.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  }
+}

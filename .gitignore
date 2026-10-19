@@ -1,0 +1,34 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-single/
+*.local
+
+# 日志
+*.log
+npm-debug.log*
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# 缓存
+.vite/
+.vitest-cache/
+coverage/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 测试产物
+playwright-report/
+test-results/
+
+# 本地 AI 协作状态（不当版本库内容）
+.workbuddy/
