@@ -8,8 +8,8 @@
     "apps/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace @mo/demo",
-    "build:single": "npm run build:single --workspace @mo/demo",
+    "dev": "npm run dev --workspace @mo/web",
+    "build:single": "npm run build:single --workspace @mo/web",
     "start": "scripts\\start.bat",
     "stop": "scripts\\stop.bat",
     "lint": "eslint .",

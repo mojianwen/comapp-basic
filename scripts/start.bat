@@ -29,7 +29,7 @@ if %errorlevel%==0 (
 echo [MoAdmin] Starting dev server: http://localhost:5219
 echo [MoAdmin] Keep this window open. To stop: close this window or run stop.bat
 echo.
-call npm run dev --workspace @mo/demo
+call npm run dev --workspace @mo/web
 
 echo.
 echo [MoAdmin] Server exited.
