@@ -2,6 +2,17 @@
 
 基于 **Vue 3.5 + Vite 6 + TypeScript + Tailwind CSS v4 + Reka UI** 的企业级后台前端框架，采用 shadcn-vue 组织范式与 npm workspaces 单仓结构。设计目标：令牌与组件跨项目复用，业务项目只写页面。
 
+## 仓库与快速开始
+
+```bash
+git clone https://github.com/mojianwen/comapp-basic.git
+cd comapp-basic
+npm install          # 必须在仓库根执行，负责重建 @mo/* 工作区软链
+npm run start        # API 3000 + 前端 5219（重复执行安全，会自动清理残留进程）
+```
+
+首次跑后端需先建库：`npm run setup --workspace @mo/server`。
+
 ## 目录结构
 
 ```
