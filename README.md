@@ -16,8 +16,9 @@ comapp-basic/
 ├── scripts/
 │   ├── e2e.mjs        # E2E 回归脚本（playwright-core + 本机 Chrome）
 │   ├── smoke.mjs      # API 冒烟测试（21 断言，需先建库并启动 server）
-│   ├── start.bat      # 一键启动（API 3000 新窗口 + Vite 5219 前台）
-│   └── stop.bat       # 按端口 3000/5219 一键停止
+│   ├── start.bat      # 一键启动（先清残留 watcher，API 3000 新窗口 + Vite 5219 前台）
+│   ├── stop.bat       # 一键停止（按进程签名，连 npm/tsx/vite watcher 父进程一起收）
+│   └── devctl.ps1     # 起停公用逻辑：识别本仓库 dev 进程（-StaleOnly 只清残留 / 默认全停）
 ├── eslint.config.js   # ESLint 10 flat config（vue essential + ts）
 ├── vitest.config.ts   # Vitest 配置（jsdom）
 └── package.json       # workspaces + 统一命令
@@ -29,7 +30,7 @@ comapp-basic/
 | --------------------------- | ----------------------------------------------------------------- |
 | `npm run dev`               | 启动开发服务器（http://localhost:5219）                           |
 | `npm run start`（或双击 `scripts/start.bat`） | 启动 API(3000，新窗口) + 前端(5219)，端口占用自动跳过，重复执行安全 |
-| `npm run stop`（或双击 `scripts/stop.bat`）   | 按端口 3000/5219 停止服务，无需手动找 PID                         |
+| `npm run stop`（或双击 `scripts/stop.bat`）   | 停止服务：按「仓库路径 + vite/tsx」识别进程并树杀，watcher 父进程一并清理，不留僵尸 |
 | `npm run build:single`      | 构建单文件 HTML（`apps/web/dist-single/index.html`，可直接分发） |
 | `npm test`                  | Vitest 单元测试（22 例）                                          |
 | `npm run e2e`               | E2E 全流程回归（23 断言，需先启动 API + dev server）              |
